@@ -1,13 +1,16 @@
 package utilities;
 
+import javax.crypto.spec.PSource;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MysqlPasswordHash {
     public static void main(String[] args) {
-        String hash = MysqlPasswordHash.password("Kmlee6791**");
+        String hash = MysqlPasswordHash.password("Kmlee");
         System.out.println(hash);
+        System.out.println("");
     }
+
 
     // byte[] to hex
     public static String byteArrayToHex(byte[] ba) {
@@ -15,7 +18,7 @@ public class MysqlPasswordHash {
             return null;
         }
 
-        StringBuffer sb = new StringBuffer(ba.length * 2);
+        StringBuilder sb = new StringBuilder(ba.length * 2);
         String hexNumber;
         for (int x = 0; x < ba.length; x++) {
             hexNumber = "0" + Integer.toHexString(0xff & ba[x]);
